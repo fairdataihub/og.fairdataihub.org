@@ -86,9 +86,9 @@ export default withOGImage<"query", ImageQueryProps>({
           </div>
         </div>
       `,
-    cacheControl: `public, max-age=604800, immutable`,
-    dev: {
-      inspectHtml: false,
-    },
+  },
+  cacheControl: `public, max-age=604800, immutable`,
+  dev: {
+    inspectHtml: false,
   },
 });
