@@ -47,7 +47,7 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-row justify-between py-16">
+      <main className="flex flex-row justify-between pt-16">
         <div className="form-container px-12">
           <h1 className="text-3xl font-bold my-3">Preview</h1>
 
@@ -63,7 +63,7 @@ export default function Index() {
               <label htmlFor="description" className="mb-1">
                 Description
               </label>
-              <textarea rows={2} id="description" name="description" required />
+              <textarea rows={2} id="description" name="description" />
             </div>
 
             <div className="flex flex-col mb-3 w-[400px]">
