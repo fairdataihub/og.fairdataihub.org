@@ -49,18 +49,15 @@ const style = `
 export default withOGImage<"query", ImageQueryProps>({
   template: {
     html: ({ title, description, app }) => {
-      let topText = "FAIR Data Innovations Hub";
-      let backgroundImage = "hexbackground.jpg";
-      let appLogo = "";
+      let appText = "FAIR Data Innovations Hub";
+      let backgroundImage = "sodaBackground.svg";
 
       if (app === "soda-for-sparc") {
-        topText = `SODA for SPARC Documentation`;
-        backgroundImage = "hexbackground.jpg";
-        appLogo = "sodaforsparclogo.svg";
+        appText = `SODA for SPARC Documentation`;
+        backgroundImage = "sodaBackground.svg";
       } else if (app === "fairshare") {
-        topText = `FAIRshare Documentation`;
-        appLogo = "sodaforsparclogo.svg";
-        backgroundImage = "hexbackground.jpg";
+        appText = `FAIRshare Documentation`;
+        backgroundImage = "sodaBackground.svg";
       }
 
       return `
@@ -72,17 +69,17 @@ export default withOGImage<"query", ImageQueryProps>({
           <div class='main' style='background-image: url(https://og-image-seven-eta.vercel.app/${backgroundImage});'>
             <style>${style}</style>
              
-            <div class='mx-14 mt-5'>
+            <div class='mx-14 mt-10'>
               <h1 class='text-[48px] font-bold'>${title ? title : ""}</h1>
-              <h2 class='text-[25px] font-semibold'>${
+              <h2 class='text-[25px] font-medium'>${
                 description ? description : ""
               }</h2>
             </div>
 
             <div class='mx-14 mb-8 flex justify-between'>
               <div class='flex flex-col items-end justify-end'>
-                <img src='https://og-image-seven-eta.vercel.app/${appLogo}' alt='app-logo' class='w-10 h-10' />
-                <p class='text-2xl pt-2 font-medium'>${topText}</p>
+                
+                <p class='text-2xl pt-2 font-medium'>${appText}</p>
               </div>
              
               <div class='flex flex-col items-end justify-center'>
