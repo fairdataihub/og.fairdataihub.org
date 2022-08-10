@@ -3,11 +3,11 @@ import React from "react";
 
 export default function Index() {
   const [imageSource, setImageSource] = React.useState(
-    "http://localhost:3000/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible"
+    "https://og.fairdataihub.org/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible"
   );
   const [showSpinner, setShowSpinner] = React.useState(false);
   const [imageURL, setImageURL] = React.useState(
-    "http://localhost:3000/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible"
+    "https://og.fairdataihub.org/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible"
   );
 
   const copyToClipboard = () => {
