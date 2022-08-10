@@ -64,7 +64,7 @@ export default withOGImage<"query", ImageQueryProps>({
       } else if (app === "fairshare") {
         appText = `FAIRshare Documentation`;
         backgroundImage += "fairshareBackground.svg";
-      } else if (app === "fairdataihub") {
+      } else if (app === "fairdataihub" || app === undefined || app === null) {
         appText = ``;
         backgroundImage += "fairdataihubBackground.svg";
       }
@@ -78,7 +78,7 @@ export default withOGImage<"query", ImageQueryProps>({
           <div class='main text-slate-700 ' style='background-image: url(${backgroundImage});'>
             <style>${style}</style>
             
-            <div class='card px-3 py-2 flex flex-col justify-between h-full w-full'>
+            <div class='card flex flex-col justify-between h-full w-full'>
               <div class='mx-14 mt-10'>
                 <h1 class='text-[48px] font-bold'>${title ? title : ""}</h1>
                 <h2 class='text-[25px] font-medium'>${

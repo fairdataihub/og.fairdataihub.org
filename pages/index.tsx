@@ -3,10 +3,12 @@ import React from "react";
 
 export default function Index() {
   const [imageSource, setImageSource] = React.useState(
-    "https://i.imgur.com/eMFPXds.png"
+    "http://localhost:3000/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible"
   );
   const [showSpinner, setShowSpinner] = React.useState(false);
-  const [imageURL, setImageURL] = React.useState("");
+  const [imageURL, setImageURL] = React.useState(
+    "http://localhost:3000/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible"
+  );
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(imageURL);
@@ -106,10 +108,10 @@ export default function Index() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={imageSource} alt="preview" />
           <div className="break-all my-2 bg-slate-100 py-1 px-1 rounded-md relative w-full">
-            <p className="w-full">{imageURL}</p>
+            <p className="w-full text-sm font-medium">{imageURL}</p>
 
             {imageURL && (
-              <div className="absolute right-0 top-1">
+              <div className="absolute right-0 bottom-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 hover:bg-slate-300 rounded-md active:translate-y-1 hover:cursor-pointer "
