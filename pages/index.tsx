@@ -5,10 +5,15 @@ export default function Index() {
   const [imageSource, setImageSource] = React.useState(
     "https://i.imgur.com/eMFPXds.png"
   );
+  const [showSpinner, setShowSpinner] = React.useState(false);
+  const [imageURL, setImageURL] = React.useState("");
 
-  // Handle the submit event on form submit.
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(imageURL);
+  };
+
   const handleSubmit = async (event) => {
-    // Stop the form from submitting and refreshing the page.
+    setShowSpinner(true);
     event.preventDefault();
 
     // Get data from the form.
@@ -18,9 +23,7 @@ export default function Index() {
       app: event.target.app.value,
     };
 
-    console.log(data);
-
-    // Send the form data to our API and get a response.
+    // Send the form data to our API.
     const response = await fetch(
       "/api/ogimage/?" +
         new URLSearchParams({
@@ -31,19 +34,24 @@ export default function Index() {
     );
 
     console.log(response);
+    setImageURL(response.url);
 
     // display the image
-
     const image = await response.blob();
     const imageSrc = URL.createObjectURL(image);
     setImageSource(imageSrc);
+
+    setShowSpinner(false);
   };
 
   return (
     <div className="flex flex-col h-screen justify-between">
       <Head>
-        <title>Next.js forms</title>
-        <meta name="description" content="Learn forms with Next.js" />
+        <title>Thumbnail generator</title>
+        <meta
+          name="description"
+          content="Generate thumbnails for fairdataihub projects"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -75,24 +83,51 @@ export default function Index() {
                 name="app"
                 id="app"
                 required
-                defaultValue={"soda-for-sparc"}
+                defaultValue={"fairdataihub"}
               >
+                <option value="fairdataihub">Default</option>
                 <option value="soda-for-sparc">SODA for SPARC</option>
                 <option value="fairshare">FAIRshare</option>
               </select>
             </div>
 
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded transition-all mt-10"
-            >
-              Submit
-            </button>
+            <div className="flex flex-row space-x-8 items-end">
+              <button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded transition-all mt-10"
+              >
+                Submit
+              </button>
+              {showSpinner && <span className="loader"></span>}
+            </div>
           </form>
         </div>
-        <div className="imageContainer px-12">
+        <div className="imageContainer px-12 flex flex-col">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={imageSource} alt="preview" />
+          <div className="break-all my-2 bg-slate-100 py-1 px-1 rounded-md relative w-full">
+            <p className="w-full">{imageURL}</p>
+
+            {imageURL && (
+              <div className="absolute right-0 top-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 hover:bg-slate-300 rounded-md active:translate-y-1 hover:cursor-pointer "
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  onClick={copyToClipboard}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
+                  />
+                </svg>
+              </div>
+            )}
+          </div>
         </div>
       </main>
 
