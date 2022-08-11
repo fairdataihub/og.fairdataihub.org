@@ -1,9 +1,8 @@
 ## [1.0.1](https://github.com/fairdataihub/og-image/compare/v1.0.0...v1.0.1) (2022-08-11)
 
-
 ### Bug Fixes
 
-* 🐛 adjust webpage for responsive view ([04031eb](https://github.com/fairdataihub/og-image/commit/04031ebc99ee3ab3d5810b12f51b395e76028be3))
+- 🐛 adjust webpage for responsive view ([04031eb](https://github.com/fairdataihub/og-image/commit/04031ebc99ee3ab3d5810b12f51b395e76028be3))
 
 # 1.0.0 (2022-08-11)
 
