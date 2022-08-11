@@ -5,6 +5,8 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/fairdataihub/og.fairdataihub.org/badge)](https://www.codefactor.io/repository/github/fairdataihub/og.fairdataihub.org)
 ![Checkly Status](https://api.checklyhq.com/v1/badges/checks/ead4a1d4-6ca9-48ad-a0dc-6decd8d981bf?style=flat&theme=default)
 ![Checkly Response Time](https://api.checklyhq.com/v1/badges/checks/ead4a1d4-6ca9-48ad-a0dc-6decd8d981bf?style=flat&theme=default&responseTime=true)
+![Checkly API Status](https://api.checklyhq.com/v1/badges/checks/2fda1936-70b1-42d6-a4a7-737865295520?style=flat&theme=default)
+![Checkly API Response Time](https://api.checklyhq.com/v1/badges/checks/2fda1936-70b1-42d6-a4a7-737865295520?style=flat&theme=default&responseTime=true)
 
 ## Project setup
 
