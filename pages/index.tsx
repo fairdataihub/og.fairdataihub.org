@@ -57,7 +57,7 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-row justify-between pt-16">
+      <main className="flex flex-col-reverse justify-evenly pt-16 md:flex-row">
         <div className="form-container px-12">
           <h1 className="my-3 text-3xl font-bold">Preview</h1>
 
@@ -104,7 +104,7 @@ export default function Index() {
             </div>
           </form>
         </div>
-        <div className="imageContainer flex flex-col px-12">
+        <div className="imageContainer flex flex-col px-12 py-12 md:py-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={imageSource} alt="preview" />
           <div className="relative my-2 w-full break-all rounded-md bg-slate-100 py-1 px-1">
