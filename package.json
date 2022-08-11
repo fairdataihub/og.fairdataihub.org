@@ -13,7 +13,6 @@
     "format": "prettier --ignore-path .gitignore \"./**/*.+(ts|js|tsx)\" --write",
     "prepare": "husky install",
     "commit": "cz",
-    "postbuild": "next-sitemap",
     "semantic-release": "semantic-release"
   },
   "lint-staged": {
