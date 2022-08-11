@@ -1,4 +1,4 @@
-import { withOGImage } from "megasanjay-next-api-og-image";
+import { withOGImage } from 'megasanjay-next-api-og-image';
 
 interface ImageQueryProps {
   title: string;
@@ -52,21 +52,21 @@ const style = `
   }
 `;
 
-export default withOGImage<"query", ImageQueryProps>({
+export default withOGImage<'query', ImageQueryProps>({
   template: {
     html: ({ title, description, app }) => {
-      let appText = "FAIR Data Innovations Hub";
-      let backgroundImage = "https://og-image-seven-eta.vercel.app/";
+      let appText = `FAIR Data Innovations Hub`;
+      let backgroundImage = `https://og-image-seven-eta.vercel.app/`;
 
-      if (app === "soda-for-sparc") {
+      if (app === `soda-for-sparc`) {
         appText = `SODA for SPARC Documentation`;
-        backgroundImage += "sodaBackground.svg";
-      } else if (app === "fairshare") {
+        backgroundImage += `sodaBackground.svg`;
+      } else if (app === `fairshare`) {
         appText = `FAIRshare Documentation`;
-        backgroundImage += "fairshareBackground.svg";
-      } else if (app === "fairdataihub" || app === undefined || app === null) {
+        backgroundImage += `fairshareBackground.svg`;
+      } else if (app === `fairdataihub` || app === undefined || app === null) {
         appText = ``;
-        backgroundImage += "fairdataihubBackground.svg";
+        backgroundImage += `fairdataihubBackground.svg`;
       }
 
       return `
@@ -75,14 +75,14 @@ export default withOGImage<"query", ImageQueryProps>({
           <script src="https://cdn.tailwindcss.com"></script>
         </head>
         <body>
-          <div class='main text-slate-700 ' style='background-image: url(${backgroundImage});'>
+          <div class='main text-slate-700' style='background-image: url(${backgroundImage});'>
             <style>${style}</style>
             
             <div class='card flex flex-col justify-between h-full w-full'>
               <div class='mx-14 mt-10'>
-                <h1 class='text-[48px] font-bold'>${title ? title : ""}</h1>
+                <h1 class='text-[48px] font-bold'>${title ? title : ``}</h1>
                 <h2 class='text-[25px] font-medium'>${
-                  description ? description : ""
+                  description ? description : ``
                 }</h2>
               </div>
 

@@ -1,13 +1,13 @@
-import Head from "next/head";
-import React from "react";
+import Head from 'next/head';
+import React from 'react';
 
 export default function Index() {
   const [imageSource, setImageSource] = React.useState(
-    "https://og.fairdataihub.org/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible"
+    `https://og.fairdataihub.org/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible`,
   );
   const [showSpinner, setShowSpinner] = React.useState(false);
   const [imageURL, setImageURL] = React.useState(
-    "https://og.fairdataihub.org/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible"
+    `https://og.fairdataihub.org/api/ogimage?title=FAIR%20Data%20Innovations%20Hub&description=Making%20FAIR%20data%20practices%20more%20accessible`,
   );
 
   const copyToClipboard = () => {
@@ -27,12 +27,12 @@ export default function Index() {
 
     // Send the form data to our API.
     const response = await fetch(
-      "/api/ogimage/?" +
+      `/api/ogimage/?` +
         new URLSearchParams({
           title: data.title,
           description: data.description,
           app: data.app,
-        })
+        }),
     );
 
     console.log(response);
@@ -47,7 +47,7 @@ export default function Index() {
   };
 
   return (
-    <div className="flex flex-col h-screen justify-between">
+    <div className="flex h-screen flex-col justify-between">
       <Head>
         <title>Thumbnail generator</title>
         <meta
@@ -59,24 +59,24 @@ export default function Index() {
 
       <main className="flex flex-row justify-between pt-16">
         <div className="form-container px-12">
-          <h1 className="text-3xl font-bold my-3">Preview</h1>
+          <h1 className="my-3 text-3xl font-bold">Preview</h1>
 
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-col mb-3 w-[400px]">
+            <div className="mb-3 flex w-[400px] flex-col">
               <label htmlFor="title" className="mb-1">
                 Title
               </label>
               <input type="text" id="title" name="title" required />
             </div>
 
-            <div className="flex flex-col mb-3 w-[400px]">
+            <div className="mb-3 flex w-[400px] flex-col">
               <label htmlFor="description" className="mb-1">
                 Description
               </label>
               <textarea rows={2} id="description" name="description" />
             </div>
 
-            <div className="flex flex-col mb-3 w-[400px]">
+            <div className="mb-3 flex w-[400px] flex-col">
               <label htmlFor="app" className="mb-1">
                 App
               </label>
@@ -85,7 +85,7 @@ export default function Index() {
                 name="app"
                 id="app"
                 required
-                defaultValue={"fairdataihub"}
+                defaultValue={`fairdataihub`}
               >
                 <option value="fairdataihub">Default</option>
                 <option value="soda-for-sparc">SODA for SPARC</option>
@@ -93,10 +93,10 @@ export default function Index() {
               </select>
             </div>
 
-            <div className="flex flex-row space-x-8 items-end">
+            <div className="flex flex-row items-end space-x-8">
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded transition-all mt-10"
+                className="mt-10 rounded border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white transition-all hover:border-blue-500 hover:bg-blue-400"
               >
                 Submit
               </button>
@@ -104,17 +104,17 @@ export default function Index() {
             </div>
           </form>
         </div>
-        <div className="imageContainer px-12 flex flex-col">
+        <div className="imageContainer flex flex-col px-12">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={imageSource} alt="preview" />
-          <div className="break-all my-2 bg-slate-100 py-1 px-1 rounded-md relative w-full">
+          <div className="relative my-2 w-full break-all rounded-md bg-slate-100 py-1 px-1">
             <p className="w-full text-sm font-medium">{imageURL}</p>
 
             {imageURL && (
               <div className="absolute right-0 bottom-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 hover:bg-slate-300 rounded-md active:translate-y-1 hover:cursor-pointer "
+                  className="h-6 w-6 rounded-md hover:cursor-pointer hover:bg-slate-300 active:translate-y-1 "
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
