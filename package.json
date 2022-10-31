@@ -48,7 +48,7 @@
     "@tailwindcss/forms": "0.5.3",
     "@types/cors": "2.8.12",
     "@types/node": "18.11.7",
-    "@types/react": "18.0.21",
+    "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
     "@typescript-eslint/eslint-plugin": "5.40.1",
     "autoprefixer": "10.4.13",
