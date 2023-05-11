@@ -96,7 +96,7 @@ export default function Index() {
             <div className="flex flex-row items-end space-x-8">
               <button
                 type="submit"
-                className="mt-10 rounded border-b-4 border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white transition-all hover:border-blue-500 hover:bg-blue-400"
+                className="mt-10 rounded border-b-4 border-blue-700 bg-blue-500 px-4 py-2 font-bold text-white transition-all hover:border-blue-500 hover:bg-blue-400"
               >
                 Submit
               </button>
@@ -107,11 +107,11 @@ export default function Index() {
         <div className="imageContainer flex flex-col px-12 py-12 md:py-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={imageSource} alt="preview" />
-          <div className="relative my-2 w-full break-all rounded-md bg-slate-100 py-1 px-1">
+          <div className="relative my-2 w-full break-all rounded-md bg-slate-100 px-1 py-1">
             <p className="w-full text-sm font-medium">{imageURL}</p>
 
             {imageURL && (
-              <div className="absolute right-0 bottom-1">
+              <div className="absolute bottom-1 right-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 rounded-md hover:cursor-pointer hover:bg-slate-300 active:translate-y-1 "
@@ -134,7 +134,7 @@ export default function Index() {
       </main>
 
       <footer className="flex justify-center py-4 text-base font-normal">
-        <div className="mt-3 flex h-full flex-col items-center justify-center space-y-4 space-x-0 divide-x-2 divide-none divide-gray-200 py-5 md:flex-row md:space-y-0 md:space-x-4 md:divide-solid">
+        <div className="mt-3 flex h-full flex-col items-center justify-center space-x-0 space-y-4 divide-x-2 divide-none divide-gray-200 py-5 md:flex-row md:space-x-4 md:space-y-0 md:divide-solid">
           <div className="text-center text-gray-500">
             <p>© 2022 FAIR Data Innovations Hub.</p>
             <p>All rights reserved.</p>
