@@ -28,7 +28,7 @@
   },
   "homepage": "https://og.fairdataihub.org",
   "dependencies": {
-    "chrome-aws-lambda": "6.0.0",
+    "chrome-aws-lambda": "10.1.0",
     "cors": "2.8.5",
     "megasanjay-next-api-og-image": "5.0.1",
     "next": "latest",
